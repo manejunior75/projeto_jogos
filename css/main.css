@@ -14,10 +14,10 @@
 	opacity:0.8;
 }
 /**
- * Grid items
+ * Bloco dos jogos
  */
 #tiles li {
- 	width: 280px;
+ 	width: 180px;
 	background-color: #ffffff;
 	border: 1px solid #dedede;
 	border-radius: 2px;
