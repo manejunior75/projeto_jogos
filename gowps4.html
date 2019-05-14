@@ -66,11 +66,45 @@
 						</div> 	
 					</div> 
 				</div>       	  
-				<div class="top-searchbar">
+								
+	<!--  Barra de Pesquisa -->
+	
+			<script
+				src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+			<div class="top-searchbar">
 					<form>
-						<input type="text" /><input type="submit" value="" />
+						<input list="jogos" type="text" oninput="myFunction()">
+						
+						<datalist id="jogos">
+							<option value="Sekiro Shadows Die Twice"><a href="SekiroShadowsDieTwice.html"></a></option>
+							<option value="GTA V"><a href="single-page.html"></a></option>
+							<option value="Days Gone"><a href="DaysGone.html"></a></option>
+							<option value="Bloodborne"><a href="Bloodborne.html"></a></option>
+							<option value="Devil May Cry 5"><a href="DMC5.html"></a></option>
+							<option value="God Of War"><a href="gowps4.html"></a></option>
+							<option value="Marvel's Spider Man"><a href="MiranhadaMarvel.html"></a></option>
+							<option value="Red Dead Redemption 2"><a href="RE2R.html"></a></option>
+						</datalist>
+						
+						<input type="submit" id="jogos" value=""/>
 					</form>
+					
+					<script>
+						var href;
+						function myFunction() {
+							$('form').on('submit', function(e) {
+								e.preventDefault();
+								href = $('datalist option[value="'+ $('input[list="jogos"]').val()+ '"]').find('a').prop('href');
+								if (typeof href !== 'undefined')
+									window.location.href = href;
+								});
+						}
+					</script>
 				</div>
+				
+				<!-- Fim da Barra de Pesquisa -->
+				
+				
 				<div class="userinfo">
 					<div class="user">
 						<ul>
