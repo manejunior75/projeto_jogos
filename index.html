@@ -1,6 +1,25 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
+	<style>
+		.btn-link {
+			border: none;
+			outline: none;
+			background: none;
+			cursor: pointer;
+			color: #717171;
+			font-family: inherit;
+			font-size: 1.2em;
+			display: block;
+			transition:0.5s all;
+			-webkit-transition:0.5s all;
+			-moz-transition:0.5s all;
+			-o-transition:0.5s all;
+		}
+		.btn-link:hover{
+			color:#B9CB41;
+		}
+	</style>
 		<title>Streamig | Home :: Jogos em Destaque</title>
 		<link href="css/style.css" rel='stylesheet' type='text/css' />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -133,12 +152,15 @@
 			 <div id="main" role="main">
 			      <ul id="tiles">
 			        <!-- These are our grid blocks -->
-			        <li onclick="location.href='SekiroShadowsDieTwice.html';">
+			        <li onclick="location.href='jogos.jsp';">
 			        	<img src="images/Sekiro.png" width="180" height="208">
 			        	<div class="post-info">
 			        		<div class="post-basic-info">
-				        		<h3><a href="#">Sekiro Shadows Die Twice</a></h3>
-				        		<span><a href="#"><label> </label>Saiba Mais</a></span>
+				        		<form action="jogos.jsp" method="post" id="envia">
+				        			<input type="text" value="Sekiro Shadows Die Twice" name="nomeJogo" id="nomeJogo" style="display:none">
+					        		<h3><button type="submit" class="btn-link">Sekiro Shadows die Twice</button></h3>
+					        		<span><a href="#"><label> </label>Saiba Mais</a></span>
+				        	</form>
 			        		</div>
 			        		<div class="post-info-rate-share">
 			        			<div class="rateit">
@@ -148,12 +170,15 @@
 			        		</div>
 			        	</div>
 			        </li>
-			        <li onclick="location.href='single-page.html';">
+			        <li onclick="location.href='jogos.jsp';">
 			        	<img src="images/GTAV.png" width="180" height="208">
 						<div class="post-info">
 			        		<div class="post-basic-info">
-				        		<h3><a href="#">Grand Theft Auto V</a></h3>
+			        		<form action="jogos.jsp" method="post" id="envia">
+			        		<input type="text" value="Grand Theft Auto V" name="nomeJogo" id="nomeJogo" style="display:none">
+				        		<h3><button type="submit" class="btn-link">Grand Theft Auto V</button></h3>
 				        		<span><a href="#"><label> </label>Saiba Mais</a></span>
+				        	</form>
 			        		</div>
 			        		<div class="post-info-rate-share">
 			        			<div class="rateit">
@@ -179,12 +204,15 @@
 			        	</div>
 			        </li> -->
 			        
-			         <li onclick="location.href='DaysGone.html';">
+			         <li onclick="location.href='jogos.jsp';">
 			        	<img src="images/DaysGone.png" width="180" height="208">
 			        	<div class="post-info">
 			        		<div class="post-basic-info">
-				        		<h3><a href="#">Days Gone</a></h3>
-				        		<span><a href="#"><label> </label>Saiba Mais</a></span>
+				        		<form action="jogos.jsp" method="post" id="envia">
+				        			<input type="text" value="Days Gone" name="nomeJogo" id="nomeJogo" style="display:none">
+					        		<h3><button type="submit" class="btn-link">Days Gone</button></h3>
+					        		<span><a href="#"><label> </label>Saiba Mais</a></span>
+				        	</form>
 			        		</div>
 			        		<div class="post-info-rate-share">
 			        			<div class="rateit">
@@ -195,12 +223,15 @@
 			        	</div>
 			        </li>
 			        
-			        <li onclick="location.href='DMC5.html';">
+			        <li onclick="location.href='jogos.jsp';">
 			        	<img src="images/DMC5.jpg" width="180" height="208">
 			        	<div class="post-info">
 			        		<div class="post-basic-info">
-				        		<h3><a href="#">Devil May Cry 5</a></h3>
-				        		<span><a href="#"><label> </label>Saiba Mais</a></span>
+				        		<form action="jogos.jsp" method="post" id="envia">
+				        			<input type="text" value="Devil May Cry 5" name="nomeJogo" id="nomeJogo" style="display:none">
+					        		<h3><button type="submit" class="btn-link">Devil May Cry 5</button></h3>
+					        		<span><a href="#"><label> </label>Saiba Mais</a></span>
+				        	</form>
 			        		</div>
 			        		<div class="post-info-rate-share">
 			        			<div class="rateit">
@@ -211,12 +242,15 @@
 			        	</div>
 			        </li>
 			        
-			        <li onclick="location.href='MiranhadaMarvel.html';">
+			        <li onclick="location.href='jogos.jsp';">
 			        	<img src="images/MSPM.jpg" width="180" height="208">
 			        	<div class="post-info">
 			        		<div class="post-basic-info">
-				        		<h3><a href="#">Marvel Spider-Man</a></h3>
-				        		<span><a href="#"><label> </label>Saiba Mais</a></span>
+				        		<form action="jogos.jsp" method="post" id="envia">
+				        			<input type="text" value="Marvel Spider-Man" name="nomeJogo" id="nomeJogo" style="display:none">
+					        		<h3><button type="submit" class="btn-link">Marvel's Spider-Man</button></h3>
+					        		<span><a href="#"><label> </label>Saiba Mais</a></span>
+				        	</form>
 			        		</div>
 			        		<div class="post-info-rate-share">
 			        			<div class="rateit">
@@ -227,12 +261,15 @@
 			        	</div>
 			        </li>
 			        
-			        <li onclick="location.href='gowps4.html';">
+			        <li onclick="location.href='jogos.jsp';">
 			        	<img src="images/GOW4.png" width="180" height="208">
 			        	<div class="post-info">
 			        		<div class="post-basic-info">
-				        		<h3><a href="#">God Of War</a></h3>
-				        		<span><a href="#"><label> </label>Saiba Mais</a></span>
+				        		<form action="jogos.jsp" method="post" id="envia">
+				        			<input type="text" value="God Of War" name="nomeJogo" id="nomeJogo" style="display:none">
+					        		<h3><button type="submit" class="btn-link">God Of War</button></h3>
+					        		<span><a href="#"><label> </label>Saiba Mais</a></span>
+				        	</form>
 			        		</div>
 			        		<div class="post-info-rate-share">
 			        			<div class="rateit">
@@ -243,12 +280,15 @@
 			        	</div>
 			        </li>
 			        
-			        <li onclick="location.href='RE2R.html';">
+			        <li onclick="location.href='jogos.jsp;">
 			        	<img src="images/RE2R.png" width="180" height="208">
 			        	<div class="post-info">
 			        		<div class="post-basic-info">
-				        		<h3><a href="#">Resident Evil 2 (2019)</a></h3>
-				        		<span><a href="#"><label> </label>Saiba Mais</a></span>
+				        		<form action="jogos.jsp" method="post" id="envia">
+				        			<input type="text" value="Resident Evil 2" name="nomeJogo" id="nomeJogo" style="display:none">
+					        		<h3><button type="submit" class="btn-link">Resident Evil 2</button></h3>
+					        		<span><a href="#"><label> </label>Saiba Mais</a></span>
+				        	</form>
 			        		</div>
 			        		<div class="post-info-rate-share">
 			        			<div class="rateit">
@@ -259,12 +299,15 @@
 			        	</div>
 			        </li>
 			        
-			        <li onclick="location.href='Bloodborne.html';">
+			        <li onclick="location.href='jogos.jsp';">
 			        	<img src="images/BloodB.jpg" width="180" height="208">
 			        	<div class="post-info">
 			        		<div class="post-basic-info">
-				        		<h3><a href="#">Bloodborne</a></h3>
-				        		<span><a href="#"><label> </label>Saiba Mais</a></span>
+				        		<form action="jogos.jsp" method="post" id="envia">
+				        			<input type="text" value="Bloodborne" name="nomeJogo" id="nomeJogo" style="display:none">
+					        		<h3><button type="submit" class="btn-link">BloodBorne</button></h3>
+					        		<span><a href="#"><label> </label>Saiba Mais</a></span>
+				        	</form>
 			        		</div>
 			        		<div class="post-info-rate-share">
 			        			<div class="rateit">
