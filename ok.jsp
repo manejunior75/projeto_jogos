@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" import="java.sql.*"%>
+    pageEncoding="ISO-8859-1" import="java.sql.*" import="Conexao.Conecta"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,15 +25,10 @@
 	
 	try{
 				
-		Class.forName("com.mysql.jdbc.Driver");
+		Connection con = Conecta.getConnection();
+		String sql = "select * from jogos where nome_jogo=?";
 		
-		String url="jdbc:mysql://localhost/projeto";
-		String user="root";
-		String password="root";
-		
-		Connection con = DriverManager.getConnection(url, user, password);
-		
-		PreparedStatement stmt = con.prepareStatement("select nome_jogo from jogos where nome_jogo=?");
+		PreparedStatement stmt = con.prepareStatement(sql);
 		stmt.setString(1, nomeJogo);
 
 		ResultSet rs = stmt.executeQuery();
@@ -43,9 +38,9 @@
 		}			
 		if(nome==""){
 			
-		String sql = "insert into jogos(nome_jogo, info_1, info_2, info_3, capa_jogo) values(?, ?, ?, ?, ?)";
+		String sql1 = "insert into jogos(nome_jogo, info_1, info_2, info_3, capa_jogo) values(?, ?, ?, ?, ?)";
 		
-		PreparedStatement stmt2 = con.prepareStatement(sql);
+		PreparedStatement stmt2 = con.prepareStatement(sql1);
 
 		stmt2.setString(1, nomeJogo);
 		stmt2.setString(2, info1);

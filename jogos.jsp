@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" import="java.sql.*"%>
+    pageEncoding="ISO-8859-1" import="java.sql.*" import="Conexao.Conecta"%>
 
 <!DOCTYPE HTML>
 <html>
@@ -53,17 +53,10 @@
 	
 	try{
 		
-		//verificando a existencia da placa no banco
+		Connection con = Conecta.getConnection();
+		String sql = "select * from jogos where nome_jogo=?";
 		
-		Class.forName("com.mysql.jdbc.Driver");
-		
-		String url="jdbc:mysql://localhost/projeto";
-		String user="root";
-		String password="root";
-		
-		Connection con = DriverManager.getConnection(url, user, password);
-		
-		PreparedStatement stmt = con.prepareStatement("select * from jogos where nome_jogo=?");
+		PreparedStatement stmt = con.prepareStatement(sql);
 		stmt.setString(1, nomeJogo);
 
 		ResultSet rs = stmt.executeQuery();
