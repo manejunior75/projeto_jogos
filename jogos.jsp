@@ -86,7 +86,7 @@
 			<div class="header">
 				<div class="wrap">
 				<div class="">
-					<a href="index.html"><img src="images/logo do site" title="" /></a>
+					<a href="index.jsp"><img src="images/logo do site" title="" /></a>
 				</div>
 				<div class="nav-icon">
 					 <a href="#" class="right_bt" id="activator"><span> </span> </a>
@@ -97,7 +97,7 @@
 						 	<div class="form_content">
 								<div class="menu_box_list">
 									<ul>
-										<li><a href="index.html"><span>Destaques</span></a></li>
+										<li><a href="index.jsp"><span>Destaques</span></a></li>
 										<li><a href="#"><span>GÃªneros</span></a></li>
 										<li><a href="#"><span>Plataformas</span></a></li>
 										<li><a href="#"><span>Contribua</span></a></li>
