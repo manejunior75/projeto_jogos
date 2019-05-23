@@ -8,15 +8,15 @@
 		<link href="css/style.css" rel='stylesheet' type='text/css' />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="shortcut icon" type="image/x-icon" href="images/fav-icon.png" />
-		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-		</script>
+		< type="application/x-java"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </>
+		</>
 		<!----webfonts---->
 		<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 		<!----//webfonts---->
 		<!---start-click-drop-down-menu----->
-		<script src="js/jquery.min.js"></script>
+		< src="js/jquery.min.js"></>
         <!----start-dropdown--->
-         <script type="text/javascript">
+         < type="text/java">
 			var $ = jQuery.noConflict();
 				$(function() {
 					$('#activator').click(function(){
@@ -36,7 +36,7 @@
 				});
 									
 			});
-		</script>
+		</>
         <!----//End-dropdown--->
 	</head>
 	<body>
@@ -46,6 +46,7 @@
 	
 	int cod=0;
 	String nome="";
+	String plataforma="";
 	String para1="";
 	String para2="";
 	String para3="";
@@ -58,12 +59,11 @@
 		
 		PreparedStatement stmt = con.prepareStatement(sql);
 		stmt.setString(1, nomeJogo);
-
 		ResultSet rs = stmt.executeQuery();
-
 		while (rs.next()) {
 			cod = (rs.getInt("cod_jogo"));
 			nome = (rs.getString("nome_jogo"));
+			plataforma = (rs.getString("plataforma"));
 			para1 = (rs.getString("info_1"));
 			para2 = (rs.getString("info_2"));
 			para3 = (rs.getString("info_3"));
@@ -86,7 +86,7 @@
 			<div class="header">
 				<div class="wrap">
 				<div class="">
-					<a href="index.jsp"><img src="images/logo do site" title="" /></a>
+					<a href="index.html"><img src="images/logo do site" title="" /></a>
 				</div>
 				<div class="nav-icon">
 					 <a href="#" class="right_bt" id="activator"><span> </span> </a>
@@ -97,7 +97,7 @@
 						 	<div class="form_content">
 								<div class="menu_box_list">
 									<ul>
-										<li><a href="index.jsp"><span>Destaques</span></a></li>
+										<li><a href="index.html"><span>Destaques</span></a></li>
 										<li><a href="#"><span>GÃªneros</span></a></li>
 										<li><a href="#"><span>Plataformas</span></a></li>
 										<li><a href="#"><span>Contribua</span></a></li>
@@ -168,6 +168,7 @@
 								<div class="artical-content">
 									<img src="<%=capa%>" title="banner1">
 									<h3><a href="#"><%=nome%></a></h3>
+									<p><%=plataforma%></p>
 									<p><%=para1%></p> 
 									<p class="para1"><%=para2%></p> 
 									<p class="para2"><%=para3%></p> 
@@ -260,4 +261,3 @@
 		<!---//End-wrap---->
 	</body>
 </html>
-
