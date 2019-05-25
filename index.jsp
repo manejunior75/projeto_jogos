@@ -78,11 +78,11 @@
 								<div class="menu_box_list">
 									<ul>
 										
-										<li><a href="index.html"><span>Destaques</span></a></li>
+										<li><a href="index.jsp"><span>Destaques</span></a></li>
 										<li><a href="#"><span>Gêneros</span></a></li>
 										<li><a href="#"><span>Plataformas</span></a></li>
 										<li><a href="#"><span>Contribua</span></a></li>
-										<li><a href="CadastroDeJogosJR.html"><span>Cadastrar Jogos</span></a></li>
+										<li><a href="CadastroDeJogos.jsp"><span>Cadastrar Jogos</span></a></li>
 										<!--<li><a href="sair.html"><span>Sair</span></a></li>-->										
 										<div class="clear"> </div>
 									</ul>
@@ -98,34 +98,10 @@
 			<script
 				src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 			<div class="top-searchbar">
-					<form>
-						<input list="jogos" type="text" oninput="myFunction()">
-						
-						<datalist id="jogos">
-							<option value="Sekiro Shadows Die Twice"><a href="SekiroShadowsDieTwice.html"></a></option>
-							<option value="GTA V"><a href="single-page.html"></a></option>
-							<option value="Days Gone"><a href="DaysGone.html"></a></option>
-							<option value="Bloodborne"><a href="Bloodborne.html"></a></option>
-							<option value="Devil May Cry 5"><a href="DMC5.html"></a></option>
-							<option value="God Of War"><a href="gowps4.html"></a></option>
-							<option value="Marvel's Spider Man"><a href="MiranhadaMarvel.html"></a></option>
-							<option value="Red Dead Redemption 2"><a href="RE2R.html"></a></option>
-						</datalist>
-						
+					<form action="pesquisa.jsp" method="post">
+						<input type="text" id="nomeJogo" name="nomeJogo">						
 						<input type="submit" id="jogos" value=""/>
 					</form>
-					
-					<script>
-						var href;
-						function myFunction() {
-							$('form').on('submit', function(e) {
-								e.preventDefault();
-								href = $('datalist option[value="'+ $('input[list="jogos"]').val()+ '"]').find('a').prop('href');
-								if (typeof href !== 'undefined')
-									window.location.href = href;
-								});
-						}
-					</script>
 				</div>
 				
 				<!-- Fim da Barra de Pesquisa -->

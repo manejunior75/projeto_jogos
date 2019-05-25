@@ -8,15 +8,18 @@
 		<link href="css/style.css" rel='stylesheet' type='text/css' />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="shortcut icon" type="image/x-icon" href="images/fav-icon.png" />
-		< type="application/x-java"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </>
-		</>
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		</script>
 		<!----webfonts---->
 		<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 		<!----//webfonts---->
+		<!-- Global CSS for the page and tiles -->
+  		<link rel="stylesheet" href="css/main.css">
+  		<!-- //Global CSS for the page and tiles -->
 		<!---start-click-drop-down-menu----->
-		< src="js/jquery.min.js"></>
+		<script src="js/jquery.min.js"></script>
         <!----start-dropdown--->
-         < type="text/java">
+         <script type="text/javascript">
 			var $ = jQuery.noConflict();
 				$(function() {
 					$('#activator').click(function(){
@@ -36,13 +39,17 @@
 				});
 									
 			});
-		</>
+		</script>
         <!----//End-dropdown--->
 	</head>
 	<body>
 	
 	<%
 	String nomeJogo = request.getParameter("nomeJogo");
+	
+	if(nomeJogo.equals("gta 5") || nomeJogo.equals("gta v")){
+		nomeJogo="Grand Theft Auto V";
+	}
 	
 	int cod=0;
 	String nome="";
@@ -86,7 +93,7 @@
 			<div class="header">
 				<div class="wrap">
 				<div class="">
-					<a href="index.html"><img src="images/logo do site" title="" /></a>
+					<a href="index.jsp"><img src="images/logo do site" title="" /></a>
 				</div>
 				<div class="nav-icon">
 					 <a href="#" class="right_bt" id="activator"><span> </span> </a>
@@ -97,7 +104,7 @@
 						 	<div class="form_content">
 								<div class="menu_box_list">
 									<ul>
-										<li><a href="index.html"><span>Destaques</span></a></li>
+										<li><a href="index.jsp"><span>Destaques</span></a></li>
 										<li><a href="#"><span>GÃªneros</span></a></li>
 										<li><a href="#"><span>Plataformas</span></a></li>
 										<li><a href="#"><span>Contribua</span></a></li>
@@ -111,39 +118,15 @@
 					</div> 
 				</div>       	  
 				
-	<!--  Barra de Pesquisa -->
+			<!--  Barra de Pesquisa -->
 	
 			<script
 				src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 			<div class="top-searchbar">
-					<form>
-						<input list="jogos" type="text" oninput="myFunction()">
-						
-						<datalist id="jogos">
-							<option value="Sekiro Shadows Die Twice"><a href="SekiroShadowsDieTwice.html"></a></option>
-							<option value="GTA V"><a href="single-page.html"></a></option>
-							<option value="Days Gone"><a href="DaysGone.html"></a></option>
-							<option value="Bloodborne"><a href="Bloodborne.html"></a></option>
-							<option value="Devil May Cry 5"><a href="DMC5.html"></a></option>
-							<option value="God Of War"><a href="gowps4.html"></a></option>
-							<option value="Marvel's Spider Man"><a href="MiranhadaMarvel.html"></a></option>
-							<option value="Red Dead Redemption 2"><a href="RE2R.html"></a></option>
-						</datalist>
-						
+					<form action="pesquisa.jsp" method="post">
+						<input type="text" id="nomeJogo" name="nomeJogo">						
 						<input type="submit" id="jogos" value=""/>
 					</form>
-					
-					<script>
-						var href;
-						function myFunction() {
-							$('form').on('submit', function(e) {
-								e.preventDefault();
-								href = $('datalist option[value="'+ $('input[list="jogos"]').val()+ '"]').find('a').prop('href');
-								if (typeof href !== 'undefined')
-									window.location.href = href;
-								});
-						}
-					</script>
 				</div>
 				
 				<!-- Fim da Barra de Pesquisa -->

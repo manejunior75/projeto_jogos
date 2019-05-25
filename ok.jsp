@@ -71,7 +71,7 @@
 		}
 	}else{
 		out.print("Insira um jogo valido");
-		%><a href="CadastroDeJogosJR.html">Ok</a><%
+		%><a href="CadastroDeJogos.jsp">Ok</a><%
 	}
 %>
 
