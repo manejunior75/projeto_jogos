@@ -4,14 +4,6 @@ CREATE DATABASE projeto;
 
 USE projeto;
 
-DROP TABLE IF EXISTS comentario;
-
-CREATE TABLE comentario (
-  comentario varchar(100) DEFAULT NULL,
-  nome varchar(100) NOT NULL,
-  data date DEFAULT NULL,
-  PRIMARY KEY (nome));
-
 DROP TABLE IF EXISTS contribua;
 
 CREATE TABLE contribua (
@@ -32,14 +24,30 @@ CREATE TABLE jogos (
   categoria varchar(30) DEFAULT NULL,
   PRIMARY KEY (cod_jogo));
 
-DROP TABLE IF EXISTS postagens;
+DROP TABLE IF EXISTS postagem;
 
-CREATE TABLE postagens (
-  videos longblob,
-  podcast blob,
-  data date NOT NULL,
-  descricao varchar(100) DEFAULT NULL,
-  PRIMARY KEY (data));
+CREATE TABLE postagem (
+  id_post int(11) NOT NULL AUTO_INCREMENT,
+  nome_usuario varchar(50) DEFAULT NULL,
+  img_usuario varchar(30) DEFAULT NULL,
+  postagem varchar(3000) DEFAULT NULL,
+  data varchar(50) DEFAULT NULL,
+  hora varchar(10) DEFAULT NULL,
+  nome_jogo varchar(30) DEFAULT NULL,
+  PRIMARY KEY(id_post));
+
+DROP TABLE IF EXISTS comentario;
+
+CREATE TABLE comentario (
+  id_coment int(11) NOT NULL AUTO_INCREMENT,
+  nome_usuario varchar(50) DEFAULT NULL,
+  img_usuario varchar(30) DEFAULT NULL,
+  comentario varchar(3000) DEFAULT NULL,
+  data varchar(50) DEFAULT NULL,
+  hora varchar(10) DEFAULT NULL,
+  usua_post varchar(50) DEFAULT NULL,
+  nome_jogo varchar(30) DEFAULT NULL,
+  PRIMARY KEY(id_post));
 
 
 DROP TABLE IF EXISTS radio;
@@ -165,4 +173,25 @@ INSERT INTO jogos
 		'images/FarCryND.png',
 		'images/capafarcrynd.png',
 		'FPS');
+
+INSERT INTO postagem
+	values(
+		1,
+		'Luciano Santiago',
+		'images/luciano.jpg',
+		'É um ótimo jogo mas depende o quão paciente você é pra ficar sendo morto por hackers e ter que migrar de sessão em sessão até achar uma sem nenhum player modded.',
+		'27 de Maio de 2019',
+		'13:47',
+		'Grand Theft Auto V');
+
+INSERT INTO comentario
+	values(
+		1,
+		'Daniel Silva',
+		'null',
+		'Mesmo depois de muito tempo lançado só agora estou jogando pra valer o modo online',
+		'27 de Maio de 2019',
+		'13:52',
+		'Luciano Santiago',
+		'Grand Theft Auto V');
 		
