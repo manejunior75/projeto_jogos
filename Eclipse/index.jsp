@@ -2,26 +2,32 @@
     pageEncoding="ISO-8859-1" import="java.sql.*" import="Conexao.Conecta"%>
 <!DOCTYPE HTML>
 <html>
-	<head>
-	<style>
-		.btn-link {
-			border: none;
-			outline: none;
-			background: none;
-			cursor: pointer;
-			color: #717171;
-			font-family: inherit;
-			font-size: 1.2em;
-			display: block;
-			transition:0.5s all;
-			-webkit-transition:0.5s all;
-			-moz-transition:0.5s all;
-			-o-transition:0.5s all;
-		}
-		.btn-link:hover{
-			color:#B9CB41;
-		}
-	</style>
+<head>	
+
+<!-- Estilizando botão para ficar igual um href -->
+
+<style>
+	.btn-link {
+		border: none;
+		outline: none;
+		background: none;
+		cursor: pointer;
+		color: #717171;
+		font-family: inherit;
+		font-size: 1.2em;
+		display: block;
+		transition:0.5s all;
+		-webkit-transition:0.5s all;
+		-moz-transition:0.5s all;
+		-o-transition:0.5s all;
+	}
+	.btn-link:hover{
+		color:#B9CB41;
+	}
+</style>
+
+<!-- Fim da estilização -->
+
 		<title>Streamig | Home :: Jogos em Destaque</title>
 		<link href="css/style.css" rel='stylesheet' type='text/css' />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,9 +40,10 @@
 		<!-- Global CSS for the page and tiles -->
   		<link rel="stylesheet" href="css/main.css">
   		<!-- //Global CSS for the page and tiles -->
-		<!---start-click-drop-down-menu----->
 		<script src="js/jquery.min.js"></script>
+		
         <!----start-dropdown--->
+        
          <script type="text/javascript">
 			var $ = jQuery.noConflict();
 				$(function() {
@@ -58,14 +65,15 @@
 									
 			});
 		</script>
-        <!----//End-dropdown--->
-		<!---//End-click-drop-down-menu----->
+        <!----Fim do dropdown--->
 	</head>
 	<body>
 		<!---start-wrap---->
 			<!---start-header---->
 			<div class="header">
 				<div class="wrap">
+				
+				<!-- Menu do site -->
 				
 				<div class="nav-icon">
 					 <a href="#" class="right_bt" id="activator"><span> </span> </a>
@@ -92,6 +100,8 @@
 					</div> 
 				</div>
 				
+	<!-- Fim do Menu -->
+				
 	<!--  Barra de Pesquisa -->
 	
 			<script
@@ -105,14 +115,8 @@
 				
 				<!-- Fim da Barra de Pesquisa -->
 				
+				<!-- Login com o google -->
 				
-				<!--<div class="userinfo">
-					<div class="user">
-						<ul>
-							<li><a href="#"><img src="images/user-pic.png" title="user-name" /><span>Ipsum</span></a></li>
-						</ul>
-					</div>				
-				</div>-->
 				<div class="userinfo">
 					<div class="user">
 						<ul>
@@ -130,52 +134,46 @@
 			 <div id="main" role="main">
 			      <ul id="tiles">
 			      
-			        <!-- These are our grid blocks -->
-
+					<!-- Aqui começa a pagina de verdade, com o grid de jogos -->
+					
 					<%
 						try {
-
+							
+							//Conectando ao banco de dados
+							
 							Connection con = Conecta.getConnection();
 							String sql = "select * from jogos where categoria='Destaques'";
-
+							
+							//Selecionando todos os jogos q estiverem na categoria 'Destaques' no banco de dados
+							
 							PreparedStatement stmt = con.prepareStatement(sql);
 							ResultSet rs = stmt.executeQuery();
+							
+							//While para mostrar todos os jogos do banco 
+							//Enquanto estiver jogos na categoria 'Destaques' o while estara mostrando
+							
 							while (rs.next()) {
-					%>
-					<li onclick="location.href='jogos.jsp';"><img
-						src="<%out.print(rs.getString("img_jogo"));%>" width="180"
-						height="208">
-						<div class="post-info">
-							<div class="post-basic-info">
-								<form action="jogos.jsp" method="post" id="envia">
-									<input type="text"
-										value="<%out.print(rs.getString("nome_jogo"));%>"
-										name="nomeJogo" id="nomeJogo" style="display: none">
-									<h3>
-										<button type="submit" class="btn-link">
-											<%
-												out.print(rs.getString("nome_jogo"));
-											%>
-										</button>
-									</h3>
-									<span><a href="#"><label> </label>Saiba Mais</a></span>
-								</form>
-							</div>
-							<div class="post-info-rate-share">
-								<div class="rateit">
-									<span> </span>
+								%>
+								<li onclick="location.href='jogos.jsp';"><img src="<%out.print(rs.getString("img_jogo"));%>" width="180" height="208">
+								<div class="post-info">
+									<div class="post-basic-info">
+										<form action="jogos.jsp" method="post" id="envia">
+											<input type="text" value="<%out.print(rs.getString("nome_jogo"));%>" name="nomeJogo" id="nomeJogo" style="display: none">
+											<h3><button type="submit" class="btn-link"><%out.print(rs.getString("nome_jogo"));%></button></h3>
+											<span><a href="#"><label> </label>Saiba Mais</a></span>
+										</form>
+									</div>
 								</div>
-								<div class="clear"></div>
-							</div>
-						</div></li>
-					<%
-						}
+								</li>
+								<%
+							}
 						} catch (Exception e) {
 							out.print("deu erro: " + e);
 						}
 					%>
 					
-					<!-- End of grid blocks -->
+					<!-- Fim do Grid de jogos -->
+					
 			      </ul>
 			    </div>
 			</div>

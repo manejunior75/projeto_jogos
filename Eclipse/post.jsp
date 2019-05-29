@@ -23,24 +23,22 @@
 	SimpleDateFormat horaFormatada= new SimpleDateFormat("HH:mm:ss");
 	String hora = horaFormatada.format(dataAtual);
 
-	String nomePost = request.getParameter("nomePost");
-	String userComent = request.getParameter("userComent");
-	String comentario = request.getParameter("comentario");
+	String userPost = request.getParameter("userPost");
+	String postagem = request.getParameter("postagem");
 	String nomeJogo = request.getParameter("nomeJogo1");
 	String imgUsuario="null";
 	
 	try{
 		
 		Connection con = Conecta.getConnection();
-		String sql = "insert into comentario(nome_usuario, img_usuario, comentario, data, hora, usua_post, nome_jogo) values(?,?,?,?,?,?,?)";
+		String sql = "insert into postagem(nome_usuario, img_usuario, postagem, data, hora, nome_jogo) values(?,?,?,?,?,?)";
 		PreparedStatement stmt = con.prepareStatement(sql);
-		stmt.setString(1, userComent);
+		stmt.setString(1, userPost);
 		stmt.setString(2, imgUsuario);
-		stmt.setString(3, comentario);
+		stmt.setString(3, postagem);
 		stmt.setString(4, data);
 		stmt.setString(5, hora);
-		stmt.setString(6, nomePost);
-		stmt.setString(7, nomeJogo);
+		stmt.setString(6, nomeJogo);
 		stmt.execute();
 		stmt.close();
 		con.close();

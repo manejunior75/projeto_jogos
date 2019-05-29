@@ -225,6 +225,9 @@ label[for="bt_coment"] {
 					<div class="clear"></div>
 				</div>
 				<!---Iniciando sessão de comentários--->
+				<div class="comment-section">
+					<div class="grids_of_2">
+						<h2>Comentários</h2>
 					<%		
 					try{
 						String nomeUsuario="";	
@@ -237,10 +240,7 @@ label[for="bt_coment"] {
 						while(rs2.next()){
 							nomeUsuario=(rs2.getString("nome_usuario"));
 						%>
-							<div class="comment-section">
-								<div class="grids_of_2">
-									<h2>Comentários</h2>
-									
+
 									<!-- postagem principal -->
 									
 									<div class="grid1_of_2">
@@ -258,10 +258,10 @@ label[for="bt_coment"] {
 											<!-- form para comentar na postagem principal -->
 											
 												<form action="envia.jsp" method="post">
-													<input type="text" id="usuaPost" name="usuaPost" value="<%=nomeUsuario%>" style="display:none">
+													<input type="text" id="nomePost" name="nomePost" value="<%=nomeUsuario%>" style="display:none">
 													<input type="text" id="nomeJogo1" name="nomeJogo1" value="<%=nomeJogo%>" style="display:none">
 													<label>Nome<span>*</span></label> 
-													<input type="text" value=" " id="usuaComent" name="usuaComent"><br /> 
+													<input type="text" value=" " id="userComent" name="userComent"><br /> 
 													<label>Comentario<span>*</span></label>
 													<input type="text" value=" " id="comentario" name="comentario"> 
 													<input type="submit" value="Enviar">
@@ -296,20 +296,19 @@ label[for="bt_coment"] {
 								out.print("deu erro: "+e);
 							}
 							%>
-						<div id="enviarComentario" class="artical-commentbox">
+						<div class="artical-commentbox">
 							<h2>Deixe seu Comentário</h2>
 							<div class="table-form">
-								<form action="#" method="post" name="post_comment">
+								<form action="post.jsp" method="post" name="post_comment">
 									<div>
-										<label>Nome<span>*</span></label> <input type="text" value=" ">
+										<label>Nome<span>*</span></label> 
+										<input type="text" value=" " id="userPost" name="userPost">
+										<input type="text" id="nomeJogo1" name="nomeJogo1" value="<%=nomeJogo%>" style="display:none">
+										
 									</div>
 									<div>
-										<label>Email<span>*</span></label> <input type="text"
-											value=" ">
-									</div>
-									<div>
-										<label>Seu comentÃƒÂ¡rio<span>*</span></label>
-										<textarea> </textarea>
+										<label>Seu comentário<span>*</span></label>
+										<textarea id="postagem" name="postagem"> </textarea>
 									</div>
 									<input type="submit" value="Enviar">
 								</form>
