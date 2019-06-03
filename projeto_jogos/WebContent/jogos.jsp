@@ -57,7 +57,7 @@ label[for="bt_coment"] {
 <title>Streamig | Game Page ::</title>
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="shortcut icon" type="image/x-icon" href="images/fav-icon.png" />
+<link rel="shortcut icon" type="image/x-icon" href="images/top.png" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 </script>
 <!----webfonts---->
@@ -147,9 +147,9 @@ label[for="bt_coment"] {
 	<!---start-header---->
 	<div class="header">
 		<div class="wrap">
-			<div class="">
-				<a href="index.jsp"><img src="images/logo do site" title="" /></a>
-			</div>
+				<div class="logo">
+					<a href="index.jsp"><img src="images/logo.png" title="Streamig" /></a>
+				</div>
 			<div class="nav-icon">
 				<a href="#" class="right_bt" id="activator"><span> </span> </a>
 			</div>
@@ -216,8 +216,8 @@ label[for="bt_coment"] {
 					</div>
 					
 					<!-- Aqui é onde entra as estrelas de avaliação-->
-					
-		        		<h3>Qual nota você daria a este Jogo?</h3>
+					<center>
+		        		<h2>Qual nota você daria a este Jogo?</h2>
 						<br/>
 						<div>
 							<a href="javascript:void(0)" onclick="Avaliar(1)">
@@ -235,7 +235,7 @@ label[for="bt_coment"] {
 							<a href="javascript:void(0)" onclick="Avaliar(5)">
 							<img src="images/star0.png" id="s5"></a>
 						<div/>
-						
+					</center>	
 						<br>	
 				
 					<!-- Fim do trecho das estrelas -->
@@ -257,18 +257,6 @@ label[for="bt_coment"] {
 					            var conteudo = encodeURIComponent(document.title + " " + window.location.href);
 					            //altera a URL do botão
 					            document.getElementById("whatsapp-share-btt").href = "https://api.whatsapp.com/send?text=" + conteudo;
-					        }, false);
-					    </script>
-					    
-					    <!-- Facebook -->
-					    
-					    <a href="" id="facebook-share-btt" rel="nofollow" target="_blank" class="facebook-share-button"></a>
-	    
-					    <script type="text/javascript">
-					        //Constrói a URL depois que o DOM estiver pronto
-					        document.addEventListener("DOMContentLoaded", function() {            
-					            //altera a URL do botão
-					            document.getElementById("facebook-share-btt").href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(window.location.href);
 					        }, false);
 					    </script>
 					    

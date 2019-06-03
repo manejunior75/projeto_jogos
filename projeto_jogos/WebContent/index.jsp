@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1" import="java.sql.*" import="Conexao.Conecta"%>
 <!DOCTYPE HTML>
 <html>
-<a href="https://api.whatsapp.com/send?l=pt&amp;phone=5583999509553"><img src="https://i.imgur.com/XMsxHpu.png" style="height:80px; position:fixed; bottom: 25px; right: 25px; z-index:100;" data-selector="img"></a>
+<a href="https://api.whatsapp.com/send?l=pt&amp;phone=5583999509553"><img src="images/icon_whats.png" style="height:80px; position:fixed; bottom: 25px; right: 25px; z-index:100;" data-selector="img"></a>
 <head>	
 
 <!-- Estilizando botão para ficar igual um href -->
@@ -33,7 +33,7 @@
 		<link href="css/style.css" rel='stylesheet' type='text/css' />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta charset="utf-8">
-		<link rel="shortcut icon" type="image/x-icon" href="images/fav-icon.png" />
+		<link rel="shortcut icon" type="image/x-icon" href="images/top.png" />
 		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 		<!----webfonts---->
 		<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -73,6 +73,9 @@
 			<!---start-header---->
 			<div class="header">
 				<div class="wrap">
+				<div class="logo">
+					<a href="index.jsp"><img src="images/logo.png" title="Streamig" /></a>
+				</div>
 				
 				<!-- Menu do site -->
 				
@@ -90,7 +93,7 @@
 										<li><a href="#"><span>Gêneros</span></a></li>
 										<li><a href="#"><span>Plataformas</span></a></li>
 										<li><a href="#"><span>Contribua</span></a></li>
-										<li><a href="CadastroDeJogos.jsp"><span>Cadastrar Jogos</span></a></li>
+										<li><a href="login.html"><span>Cadastrar Jogos</span></a></li>
 										<!--<li><a href="sair.html"><span>Sair</span></a></li>-->										
 										<div class="clear"> </div>
 									</ul>

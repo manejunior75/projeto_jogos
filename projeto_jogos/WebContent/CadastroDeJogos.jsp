@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html >
 <head>
 <meta charset="UTF-8">
 <title>Cadastro de Jogos</title>
-<link rel="shortcut icon" type="image/x-icon" href="images/fav-icon.png" />
+<link rel="shortcut icon" type="image/x-icon" href="images/top.png" />
 <link rel="stylesheet" type="text/css" href="bootstrap/bootstrap.min.css">
 </head>
 <body>
