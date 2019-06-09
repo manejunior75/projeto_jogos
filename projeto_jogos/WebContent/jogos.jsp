@@ -53,6 +53,7 @@ label[for="bt_coment"] {
 .btn-link:hover {
 	color: #B9CB41;
 }
+
 </style>
 <title>Streamig | Game Page ::</title>
 <link href="css/style.css" rel='stylesheet' type='text/css' />
@@ -160,8 +161,7 @@ label[for="bt_coment"] {
 							<div class="menu_box_list">
 								<ul>
 									<li><a href="index.jsp"><span>Destaques</span></a></li>
-									<li><a href="#"><span>Gêneros</span></a></li>
-									<li><a href="#"><span>Plataformas</span></a></li>
+									<li><a href="escolhaGenero.jsp"><span>Gêneros</span></a></li>
 									<li><a href="#"><span>Contribua</span></a></li>
 									<li><a href="sair.html"><span>Sair</span></a></li>
 									<div class="clear"></div>
@@ -234,9 +234,9 @@ label[for="bt_coment"] {
 
 							<a href="javascript:void(0)" onclick="Avaliar(5)">
 							<img src="images/star0.png" id="s5"></a>
-						<div/>
+						</div>
 					</center>	
-						<br>	
+						<br>
 				
 					<!-- Fim do trecho das estrelas -->
 					

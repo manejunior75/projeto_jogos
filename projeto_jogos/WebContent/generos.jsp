@@ -8,6 +8,10 @@
 <!-- Estilizando botão para ficar igual um href -->
 
 <style>
+	.titleGenero{
+		color:#fff;
+		font-size: 20px
+	}
 	.btn-link {
 		border: none;
 		outline: none;
@@ -130,11 +134,19 @@
 				<div class="clear"> </div>
 			</div>
 		</div>
+		
+		<%
+		String categoria = request.getParameter("genero");
+		%>
 		<!---//End-header---->
 		<!---start-content---->
 		<div class="content">
 			<div class="wrap">
 			 <div id="main" role="main">
+			 	<div class="titleGenero" style="text-align: center">
+					<h1><%=categoria%></h1>
+				</div>
+				<br/>
 			      <ul id="tiles">
 			      
 					<!-- Aqui começa a pagina de verdade, com o grid de jogos -->
@@ -145,15 +157,17 @@
 							//Conectando ao banco de dados
 							
 							Connection con = Conecta.getConnection();
-							String sql = "select * from jogos where destaque='sim'";
+							String sql = "select nome_jogo, img_jogo from jogos where categoria1= ? or categoria2= ? or categoria3= ?";
 							
-							//Selecionando todos os jogos q estiverem na categoria 'Destaques' no banco de dados
+							//Selecionando todos os jogos q estiverem na categoria escolhida
 							
 							PreparedStatement stmt = con.prepareStatement(sql);
+							stmt.setString(1, categoria);
+							stmt.setString(2, categoria);
+							stmt.setString(3, categoria);
 							ResultSet rs = stmt.executeQuery();
 							
 							//While para mostrar todos os jogos do banco 
-							//Enquanto estiver jogos na categoria 'Destaques' o while estara mostrando
 							
 							while (rs.next()) {
 								%>

@@ -23,7 +23,7 @@ img{max-width:100%;}
 /*end reset*/
 body{
 	font-family: 'Open Sans', sans-serif;
-	background:#F0EFEE;
+	background:#000000;
 }
 /*---start-wrap----*/
 .wrap{
@@ -189,7 +189,7 @@ td, th {
 /*--Fim do bloco menu--*/
 
 .header{
-	background:url(../images/border.png) repeat-x 0px 0px #FFF;
+	background:url(../images/border.png) repeat-x 0px 0px #000000;
 	padding: 1.5em 0 1.2em;
 	border-bottom: 1px solid rgba(214, 213, 212, 0.64);
 	position: fixed;
@@ -332,7 +332,7 @@ a.boxclose{
 	font-size: 1em;
 }
 .user ul li a{
-	color:#8C8C8C;
+	color:#ffffff;
 	transition:0.5s all;
 	-webkit-transition:0.5s all;
 	-moz-transition:0.5s all;
@@ -449,7 +449,7 @@ a.boxclose{
 /*----start-single-page----*/
 .artical-content h3 a{
 	font: 400 28px/28px 'Open Sans', sans-serif;
-	color: #626262;
+	color: #ffffff;
 	text-align: left;
 	font-weight: 400;
 	padding: 0.9em 0 0;
@@ -457,12 +457,13 @@ a.boxclose{
 }
 .artical-content p{
 	font: normal 16px/26px 'Open Sans', sans-serif,Helvetica,sans-serif;
-	color: #9b9b9b;
+	color: #ffffff;
 	padding: 17px 0px;
 	font-weight: 400;
 }
 .artical-content img{
 	width:100%;
+	border: 2px solid #fff;
 }
 /*----share-artical----*/
 .share-artical ul li{
@@ -485,7 +486,7 @@ a.boxclose{
 /*---comment-box----*/
 .single-page {
 	margin-top: 8em;
-	background: #fff;
+	background: #000000;
 	padding:2%;
 }
 /*----artical-links---*/
@@ -516,7 +517,7 @@ a.boxclose{
 /*----start-comment-section---*/
 h4.style1 a {
 	font: 400 20px/28px 'Open Sans', sans-serif;
-	color: #363636;
+	color: #ffffff;
 	text-transform: uppercase;
 	padding: 1em 0;
 	-webkit-transition: all 0.3s ease-out;
@@ -527,28 +528,28 @@ h4.style1 a {
 }
 h3.style {
 	font: 400 13px/28px 'Open Sans', sans-serif;
-	color: #363636;
+	color: #ffffff;
 	text-align: left;
 	text-transform: uppercase;
 	padding: 0.8em 0 0;
 }
 p.para {
 	font-size:0.875em;
-	color: #B7B5B5;
+	color: #ffffff;
 	margin: 0.6em 0;
 	line-height: 1.8em;
 	font-weight: 400;
 }
 .grids_of_2 h2 {
 	font:400 30px/28px 'Open Sans', sans-serif;
-	color: #363636;
+	color: #ffffff;
 	text-align: left;
 	padding: 1em 0 0.5em;
 }
 
 .grids_of_3 h2 {
 	font:300 30px/28px 'Open Sans', sans-serif;
-	color: #363636;
+	color: #ffffff;
 	text-align: Center;
 	padding: 1em 0 0.5em;
 }
@@ -572,7 +573,7 @@ p.para {
 	display: inline-block;
 	text-align: left;
 	font-size: 0.875em;
-	color:#363636;
+	color:#ffffff;
 	line-height: 1.8em;
 	padding: 2px 0;
 	font-family: 'Open Sans', sans-serif;
@@ -681,7 +682,7 @@ p.para {
 	display: block;
 	margin: 0.4em 0 0.5em;
 	font-family: 'Open Sans', sans-serif;
-	color:#363636;
+	color:#ffffff;
 	font-weight:100;
 }
 .table-form div{
@@ -711,7 +712,7 @@ p.para {
 	overflow: hidden;
 }
 .extra-wrap p {
-	color: #626262;
+	color: #ffffff;
 	line-height: 1.8em;
 	font-size: 0.85em;
 	margin-bottom: 5px;

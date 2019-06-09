@@ -8,6 +8,10 @@
 <!-- Estilizando botão para ficar igual um href -->
 
 <style>
+	.titleGenero{
+		color:#fff;
+		font-size: 20px
+	}
 	.btn-link {
 		border: none;
 		outline: none;
@@ -69,7 +73,7 @@
         <!----Fim do dropdown--->
 	</head>
 	<body>
-		<!---start-wrap---->
+	<!---start-wrap---->
 			<!---start-header---->
 			<div class="header">
 				<div class="wrap">
@@ -90,7 +94,7 @@
 									<ul>
 										
 										<li><a href="index.jsp"><span>Destaques</span></a></li>
-										<li><a href="escolhaGenero.jsp"><span>Gêneros</span></a></li>
+										<li><a href="#"><span>Gêneros</span></a></li>
 										<li><a href="#"><span>Contribua</span></a></li>
 										<li><a href="login.html"><span>Cadastrar Jogos</span></a></li>
 										<!--<li><a href="sair.html"><span>Sair</span></a></li>-->										
@@ -132,37 +136,40 @@
 		</div>
 		<!---//End-header---->
 		<!---start-content---->
+		
 		<div class="content">
 			<div class="wrap">
 			 <div id="main" role="main">
+				<div class="titleGenero" style="text-align: center">
+					<h1>Jogos por Gêneros</h1>
+					<p>Selecione o gênero para ver os jogos do mesmo</p>
+				</div>
+				<br/>
 			      <ul id="tiles">
-			      
-					<!-- Aqui começa a pagina de verdade, com o grid de jogos -->
-					
+			     	
 					<%
 						try {
 							
 							//Conectando ao banco de dados
 							
 							Connection con = Conecta.getConnection();
-							String sql = "select * from jogos where destaque='sim'";
+							String sql = "select * from generos";
 							
-							//Selecionando todos os jogos q estiverem na categoria 'Destaques' no banco de dados
+							//Selecionando todos os Generos que estiverem no banco de dados
 							
 							PreparedStatement stmt = con.prepareStatement(sql);
 							ResultSet rs = stmt.executeQuery();
 							
-							//While para mostrar todos os jogos do banco 
-							//Enquanto estiver jogos na categoria 'Destaques' o while estara mostrando
+							//While para mostrar todos os generos do banco 
 							
 							while (rs.next()) {
 								%>
-								<li onclick="location.href='jogos.jsp';"><img src="<%out.print(rs.getString("img_jogo"));%>" width="180" height="208">
+								<li onclick="location.href='generos.jsp';"><img src="<%out.print(rs.getString("img_genero"));%>" width="180" height="208">
 								<div class="post-info">
 									<div class="post-basic-info">
-										<form action="jogos.jsp" method="post" id="envia">
-											<input type="text" value="<%out.print(rs.getString("nome_jogo"));%>" name="nomeJogo" id="nomeJogo" style="display: none">
-											<h3><button type="submit" class="btn-link"><%out.print(rs.getString("nome_jogo"));%></button></h3>
+										<form action="generos.jsp" method="post" id="envia">
+											<input type="text" value="<%out.print(rs.getString("genero"));%>" name="genero" id="genero" style="display: none">
+											<h3><button type="submit" class="btn-link"><%out.print(rs.getString("genero"));%></button></h3>
 											<!-- <span><a href="#"><label> </label>Saiba Mais</a></span>-->
 										</form>
 									</div>

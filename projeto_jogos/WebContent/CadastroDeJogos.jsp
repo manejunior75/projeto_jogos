@@ -38,11 +38,17 @@
 								<label>Informações Sobre o Jogo</label>
 							</center>
 							<input type="text" id="info1" class="form-control" name="info1"
-								placeholder="Digite o 1º Paragrafo"><br /> <input
-								type="text" id="info2" class="form-control" name="info2"
-								placeholder="Digite o 2º Paragrafo"><br /> <input
-								type="text" id="info3" class="form-control" name="info3"
+								placeholder="Digite o 1º Paragrafo"><br /> 
+								<input type="text" id="info2" class="form-control" name="info2"
+								placeholder="Digite o 2º Paragrafo"><br /> 
+								<input type="text" id="info3" class="form-control" name="info3"
 								placeholder="Digite o 3º Paragrafo"><br />
+								
+							<center>
+								<label>Plataformas do jogo</label>
+							</center>
+								<input type="text" id="plataformas" class="form-control" name="plataformas"
+								placeholder="ex: PS3, PS4, X360, XONE, Windows"><br/>
 								
 							<center>
 								<label>Imagem do Jogo</label>
@@ -57,10 +63,16 @@
 								name="capaJogo" placeholder="Digite o endereço da imagem"><br />
 							
 							<center>
-								<label>Categoria do jogo</label>
+								<label>Gêneros do jogo</label>
 							</center>
-							<input type="text" id="categoria" class="form-control"
-								name="categoria" placeholder="Digite a categoria do jogo"><br />
+							<input type="text" id="categoria1" class="form-control"
+								name="categoria1" placeholder="Digite o gênero do jogo"><br />
+							<input type="text" id="categoria2" class="form-control"
+								name="categoria2" placeholder="Digite o segundo gênero do jogo"><br />
+							<input type="text" id="categoria3" class="form-control"
+								name="categoria3" placeholder="Digite o terceiro gênero do jogo"><br />
+							<input type="text" id="destaque" class="form-control"
+								name="destaque" placeholder="O jogo vai estar na pagina destaque? sim ou não"><br />
 						</div>
 		
 						<center>
