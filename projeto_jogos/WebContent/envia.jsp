@@ -55,10 +55,10 @@
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
 						<div class="modal-header">
-							<h4 class="modal-title" id="myModalLabel">Comentário Inserido com Sucesso!</h4>
+							<center><h4 class="modal-title" id="myModalLabel">Comentário Inserido com Sucesso!</h4></center>
 						</div>
 						<div class="modal-body">
-							<p>Aqui deve aparecer o comentário inserido pelo usuário, caso seja útil!</p>
+							<p>Obrigado pela sua contribuição, com sua ajuda nos tornamos cada vez, uma plataforma melhor! </p>
 						</div>
 						<div class="modal-footer">	
 							<form action="jogos.jsp" method="post">

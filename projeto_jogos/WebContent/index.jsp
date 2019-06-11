@@ -69,9 +69,36 @@
         <!----Fim do dropdown--->
 	</head>
 	<body>
+		
+	
+	
 		<!---start-wrap---->
 			<!---start-header---->
 			<div class="header">
+				
+				<!-- Início código rádio -->
+		
+				<div id="cp_widget_4487f155-0588-4cf8-bb0e-fba410f76f4f">...</div>
+				<script type="text/javascript">
+				var cpo = [];
+				cpo["_object"] = "cp_widget_4487f155-0588-4cf8-bb0e-fba410f76f4f";
+				cpo["_fid"] = "AgIAdh-8Ylh-";
+				var _cpmp = _cpmp || [];
+				_cpmp.push(cpo);
+				(function() {
+				var cp = document.createElement("script");
+				cp.type = "text/javascript";
+				cp.async = true;
+				cp.src = "//www.cincopa.com/media-platform/runtime/libasync.js";
+				var c = document.getElementsByTagName("script")[0];
+				c.parentNode.insertBefore(cp, c);
+				})();
+				</script>
+				<noscript>
+				<span>Rádio Streamig</span>
+				</noscript>
+				
+				<!-- Fim rádio -->
 				<div class="wrap">
 				<div class="logo">
 					<a href="index.jsp"><img src="images/logo.png" title="Streamig" /></a>
@@ -91,7 +118,7 @@
 										
 										<li><a href="index.jsp"><span>Destaques</span></a></li>
 										<li><a href="escolhaGenero.jsp"><span>Gêneros</span></a></li>
-										<li><a href="#"><span>Contribua</span></a></li>
+										<li><a href="Contribua.html"><span>Contribua</span></a></li>
 										<li><a href="login.html"><span>Cadastrar Jogos</span></a></li>
 										<!--<li><a href="sair.html"><span>Sair</span></a></li>-->										
 										<div class="clear"> </div>
@@ -105,7 +132,9 @@
 				
 	<!-- Fim do Menu -->
 				
+				
 	<!--  Barra de Pesquisa -->
+	
 	
 			<script
 				src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -127,10 +156,14 @@
 						</ul>
 					</div>				
 				</div>
-				<div class="clear"> </div>
+				<div class="clear"> </div>		
+				
 			</div>
 		</div>
-		<!---//End-header---->
+		<br>
+		</br>
+		<!---//End-header---->		
+		
 		<!---start-content---->
 		<div class="content">
 			<div class="wrap">

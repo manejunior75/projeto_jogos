@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html >
+<a href="https://api.whatsapp.com/send?l=pt&amp;phone=5583999509553"><img src="images/icon_whats.png" style="height:80px; position:fixed; bottom: 25px; right: 25px; z-index:100;" data-selector="img"></a>
 <head>
 <meta charset="UTF-8">
 <title>Cadastro de Jogos</title>

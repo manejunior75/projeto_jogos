@@ -1,10 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" import="java.sql.*" import="Conexao.Conecta"%>
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <meta charset="ISO-8859-1">
-<title>cadastro de jogos</title>
+<title>Cadastra Jogos</title>
 </head>
 <body>
 
@@ -70,16 +73,70 @@
 			stmt2.close();
 			con.close();
 			
-			out.print("jogo inserido com sucesso");
 			%>
-			<form action="jogos.jsp" method="post" id="envia">
-				<input type="text" value="<%=nomeJogo%>" id="nomeJogo" name="nomeJogo" style="display:none">
-				<button type="submit">Ver página do jogo</button>
-			</form><%
+			<!-- Modal -->
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<Center><h4 class="modal-title" id="myModalLabel">Jogo Cadastrado com Sucesso!</h4></Center>
+						</div>
+						<div class="modal-body">
+							<p>O jogo foi cadastrado com Sucesso, para conferir, basta verificar na categoria onde foi salva.</p>
+						</div>
+						<div class="modal-footer">	
+							<form action="jogos.jsp" method="post" id="envia">
+								<input type="text" value="<%=nomeJogo%>" id="nomeJogo" name="nomeJogo" style="display:none">
+								<Center><button type="submit">Ver página do jogo</button></Center>
+							</form>
+							
+						</div>
+					</div>
+				</div>
+			</div>				
+			<script>
+				$(document).ready(function () {
+					$('#myModal').modal('show');
+				});
+			</script>
+			<%
 			
 			}else{
-				out.print("esse jogo ja esta no banco");
-				%><a href="index.jsp">Ok</a><%
+				
+				%>
+				
+				<!-- Modal -->
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<Center><h4 class="modal-title" id="myModalLabel">Atenção!</h4></Center>
+							</div>
+							<div class="modal-body">
+								<p>Este jogo encontra-se cadastrado!</p>
+							</div>
+							<div class="modal-footer">	
+								<form action="index.jsp" method="post" id="envia">
+									<Center><button type="submit">OK</button></Center>
+								</form>
+								
+							</div>
+						</div>
+					</div>
+				</div>				
+				<script>
+					$(document).ready(function () {
+						$('#myModal').modal('show');
+					});
+				</script>
+				
+				
+				
+				
+				
+				
+				
+				<%
 			}
 		}catch(Exception e){
 			out.print("Deu algum erro" +e);

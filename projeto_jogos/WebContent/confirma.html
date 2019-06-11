@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- Modal -->
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<center><h4 class="modal-title" id="myModalLabel">Contribuição Enviada com Sucesso!</h4></center>
+						</div>
+						<div class="modal-body">
+							<p>Sua contribuição será analisada por nossa equipe, caso o conteúdo seja aprovado, em breve sua contribuição irá aparecer em nosso site com as devidas referências, agradecemos pela contribuição.</p>
+						</div>
+						<div class="modal-footer">	
+							<form action="index.jsp" method="post">
+								<button>ok</button>
+							
+							</form>
+							
+						</div>
+					</div>
+				</div>
+			</div>				
+			<script>
+				$(document).ready(function () {
+					$('#myModal').modal('show');
+				});
+			</script>
+
+</body>
+</html>
