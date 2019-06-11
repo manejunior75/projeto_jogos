@@ -3,7 +3,10 @@ man<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 
 <!DOCTYPE HTML>
 <html>
-<a href="https://api.whatsapp.com/send?l=pt&amp;phone=5583999509553"><img src="images/icon_whats.png" style="height:80px; position:fixed; bottom: 25px; right: 25px; z-index:100;" data-selector="img"></a>
+<a href="https://api.whatsapp.com/send?l=pt&amp;phone=5583999509553"><img
+	src="images/icon_whats.png"
+	style="height: 80px; position: fixed; bottom: 25px; right: 25px; z-index: 100;"
+	data-selector="img"></a>
 <head>
 <style>
 .<
@@ -54,7 +57,6 @@ label[for="bt_coment"] {
 .btn-link:hover {
 	color: #B9CB41;
 }
-
 </style>
 <title>Streamig | Game Page ::</title>
 <link href="css/style.css" rel='stylesheet' type='text/css' />
@@ -99,7 +101,7 @@ label[for="bt_coment"] {
 <!-- Início Script Avaliação -->
 
 <script src="js/funcoes.js"></script>
-	
+
 <!-- Fim Script Avaliação -->
 
 </head>
@@ -115,6 +117,11 @@ label[for="bt_coment"] {
 	String para2="";
 	String para3="";
 	String capa="";
+	String nomeReview="";
+	String imgReview="";
+	String reviews="";
+	String data="";
+	String hora="";
 	
 	try{
 		
@@ -148,12 +155,12 @@ label[for="bt_coment"] {
 	<!---start-wrap---->
 	<!---start-header---->
 	<div class="header">
-		
-		
+
+
 		<!-- Início código rádio -->
-		
-				<div id="cp_widget_4487f155-0588-4cf8-bb0e-fba410f76f4f">...</div>
-				<script type="text/javascript">
+
+		<div id="cp_widget_4487f155-0588-4cf8-bb0e-fba410f76f4f">...</div>
+		<script type="text/javascript">
 				var cpo = [];
 				cpo["_object"] = "cp_widget_4487f155-0588-4cf8-bb0e-fba410f76f4f";
 				cpo["_fid"] = "AgIAdh-8Ylh-";
@@ -168,15 +175,15 @@ label[for="bt_coment"] {
 				c.parentNode.insertBefore(cp, c);
 				})();
 				</script>
-				<noscript>
-				<span>Rádio Streamig</span>
-				</noscript>
-				
-				<!-- Fim rádio -->
-				<div class="wrap">
-				<div class="logo">
-					<a href="index.jsp"><img src="images/logo.png" title="Streamig" /></a>
-				</div>
+		<noscript>
+			<span>Rádio Streamig</span>
+		</noscript>
+
+		<!-- Fim rádio -->
+		<div class="wrap">
+			<div class="logo">
+				<a href="index.jsp"><img src="images/logo.png" title="Streamig" /></a>
+			</div>
 			<div class="nav-icon">
 				<a href="#" class="right_bt" id="activator"><span> </span> </a>
 			</div>
@@ -226,6 +233,11 @@ label[for="bt_coment"] {
 	</div>
 	<!---//End-header---->
 	<!---start-content---->
+
+
+
+
+
 	<div class="content">
 		<div class="wrap">
 			<div class="single-page">
@@ -240,43 +252,150 @@ label[for="bt_coment"] {
 						<p class="para1"><%=para2%></p>
 						<p class="para2"><%=para3%></p>
 					</div>
-					
+
 					<!-- Aqui é onde entra as estrelas de avaliação-->
 					<center>
-		        		<h2>Qual nota você daria a este Jogo?</h2>
-						<br/>
+						<h2>Qual nota você daria a este Jogo?</h2>
+						<br />
 						<div>
-							<a href="javascript:void(0)" onclick="Avaliar(1)">
-							<img src="images/star0.png" id="s1"></a>
-
-							<a href="javascript:void(0)" onclick="Avaliar(2)">
-							<img src="images/star0.png" id="s2"></a>
-
-							<a href="javascript:void(0)" onclick="Avaliar(3)">
-							<img src="images/star0.png" id="s3"></a>
-
-							<a href="javascript:void(0)" onclick="Avaliar(4)">
-							<img src="images/star0.png" id="s4"></a>
-
-							<a href="javascript:void(0)" onclick="Avaliar(5)">
-							<img src="images/star0.png" id="s5"></a>
+							<a href="javascript:void(0)" onclick="Avaliar(1)"> <img
+								src="images/star0.png" id="s1"></a> <a
+								href="javascript:void(0)" onclick="Avaliar(2)"> <img
+								src="images/star0.png" id="s2"></a> <a
+								href="javascript:void(0)" onclick="Avaliar(3)"> <img
+								src="images/star0.png" id="s3"></a> <a
+								href="javascript:void(0)" onclick="Avaliar(4)"> <img
+								src="images/star0.png" id="s4"></a> <a
+								href="javascript:void(0)" onclick="Avaliar(5)"> <img
+								src="images/star0.png" id="s5"></a>
 						</div>
-					</center>	
-						<br>
-				
-					<!-- Fim do trecho das estrelas -->
+					</center>
+				</div>
+			</div>
+
+
+
+
+			<!-- Review q romeryto pediu -->
+
+
+
+
+			<form action="review.jsp" method="post">
+				<p>Review Principal</p>
+				<input type="text" id="nomeJogo1" name="nomeJogo1"
+					value="<%=nomeJogo%>" style="display: none"> <label>Nome<span>*</span></label>
+				<input type="text" value=" " id="userReview" name="userReview"><br />
+				<label>Review<span>*</span></label> <input type="text" value=" "
+					id="review" name="review"> <input type="submit"
+					value="Enviar">
+			</form>
+
+			<%		
+					try{	
+						Connection conReview = Conecta.getConnection();
+						String review = "select * from review where nome_jogo=?";
+						
+						PreparedStatement stReview = conReview.prepareStatement(review);
+						stReview.setString(1, nomeJogo);
+						ResultSet rsReview = stReview.executeQuery();
+						while(rsReview.next()){
+							nomeReview = (rsReview.getString("nome_usuario"));
+							imgReview = (rsReview.getString("img_usuario"));
+							reviews = (rsReview.getString("review"));
+							data = (rsReview.getString("data"));
+							hora = (rsReview.getString("hora"));
+							%>
+								<div class="grid1_of_2">
+									<div class="grid_img">
+										<a href=""><img src="<%=imgReview%>" alt=""></a>
+									</div>
+									<div class="grid_text">
+										<h4 class="style1 list">
+											<a href="#"><%=nomeReview%></a>
+										</h4>
+										<h3 class="style">
+											<%out.print(data + " - " + hora);%>
+										</h3>
+										<p class="para top"><%=reviews%></p>
 					
-					<!-- Seção de compartilhamento -->
+										<!-- form para comentar na postagem principal -->
 					
-					<div align="center" class="grids_of_3">
+										<form action="enviaReview.jsp" method="post">
+											<p>Resposta da review</p>
+											<input type="text" id="nomeReview" name="nomeReview"
+												value="<%=nomeReview%>" style="display: none"> <input
+												type="text" id="nomeJogo1" name="nomeJogo1" value="<%=nomeJogo%>"
+												style="display: none"> <label>Nome<span>*</span></label>
+											<input type="text" value=" " id="userResp" name="userResp"><br />
+											<label>Review<span>*</span></label> <input type="text" value=" "
+												id="respReview" name="respReview"> <input type="submit"
+												value="Enviar">
+										</form>
+										</nav>
+									</div>
+									<div class="clear"></div>
+								</div>
+							</div>
+							<br>
+							<%
+						}
 						
-						<h2>Compartilhe com seus amigos</h2>
-						
-						<!-- Whatsapp -->
-						
-						<a href="" id="whatsapp-share-btt" rel="nofollow" target="_blank" class="whatsapp-share-button"></a>
-	
-					    <script type="text/javascript">
+						String respReview = "select * from resp_review where nome_jogo = ? and nome_review=?";
+						PreparedStatement stResp = conReview.prepareStatement(respReview);
+						stResp.setString(1, nomeJogo);
+						stResp.setString(2, nomeReview);
+						ResultSet rsResp =stResp.executeQuery();
+						while(rsResp.next()){
+							%>
+							<div class="grid1_of_2 left">
+								<div class="grid_img">
+									<a href=""><img
+										src="<%out.print(rsResp.getString("img_resp"));%>" alt=""></a>
+								</div>
+								<div class="grid_text">
+									<h4 class="style1 list">
+										<a href="#">
+											<%out.print(rsResp.getString("nome_resp"));%>
+										</a>
+									</h4>
+									<h3 class="style">
+										<%out.print(rsResp.getString("data")+" - "+rsResp.getString("hora"));%>
+									</h3>
+									<p class="para top">
+										<%out.print(rsResp.getString("resp_review"));%>
+									</p>
+								</div>
+								<div class="clear"></div>
+							</div>
+							<%
+						}
+					}catch(Exception e){
+					}
+						%>
+
+
+
+		<!-- Final da review -->
+
+
+
+
+
+		<!-- Fim do trecho das estrelas -->
+
+		<!-- Seção de compartilhamento -->
+
+		<div align="center" class="grids_of_3">
+
+			<h2>Compartilhe com seus amigos</h2>
+
+			<!-- Whatsapp -->
+
+			<a href="" id="whatsapp-share-btt" rel="nofollow" target="_blank"
+				class="whatsapp-share-button"></a>
+
+			<script type="text/javascript">
 					        //Constrói a URL depois que o DOM estiver pronto
 					        document.addEventListener("DOMContentLoaded", function() {
 					            //conteúdo que será compartilhado: Título da página + URL
@@ -285,12 +404,13 @@ label[for="bt_coment"] {
 					            document.getElementById("whatsapp-share-btt").href = "https://api.whatsapp.com/send?text=" + conteudo;
 					        }, false);
 					    </script>
-					    
-					    <!-- Telegram -->
-					    
-					    <a href="" id="telegram-share-btt" rel="nofollow" target="_blank" class="telegram-share-button"></a>    
-					    
-					    <script type="text/javascript">
+
+			<!-- Telegram -->
+
+			<a href="" id="telegram-share-btt" rel="nofollow" target="_blank"
+				class="telegram-share-button"></a>
+
+			<script type="text/javascript">
 					        //Constrói a URL depois que o DOM estiver pronto
 					        document.addEventListener("DOMContentLoaded", function() {
 					            var url = encodeURIComponent(window.location.href); //url
@@ -299,12 +419,13 @@ label[for="bt_coment"] {
 					            document.getElementById("telegram-share-btt").href = telegramLink;
 					        }, false);
 					    </script>
-					    
-					    <!-- Twitter -->
-					    
-					    <a href="" id="twitter-share-btt" rel="nofollow" target="_blank" class="twitter-share-button"></a>
-	
-					    <script type="text/javascript">
+
+			<!-- Twitter -->
+
+			<a href="" id="twitter-share-btt" rel="nofollow" target="_blank"
+				class="twitter-share-button"></a>
+
+			<script type="text/javascript">
 					        //Constrói a URL depois que o DOM estiver pronto
 					        document.addEventListener("DOMContentLoaded", function() {
 					            var url = encodeURIComponent(window.location.href);
@@ -317,12 +438,13 @@ label[for="bt_coment"] {
 					            //document.getElementById("twitter-share-btt").href = "https://twitter.com/intent/tweet?url="+url+"&text="+titulo+"&via="+via;
 					        }, false);
 					    </script>
-					    
-					    <!-- Email -->
-					    
-					    <a href="" id="mail-share-btt" rel="nofollow" target="_blank" class="mail-share-button"></a>    
-					   
-					    <script type="text/javascript">
+
+			<!-- Email -->
+
+			<a href="" id="mail-share-btt" rel="nofollow" target="_blank"
+				class="mail-share-button"></a>
+
+			<script type="text/javascript">
 					        //Constrói a URL depois que o DOM estiver pronto
 					        document.addEventListener("DOMContentLoaded", function() {
 					            var url = window.location.href; //url
@@ -347,16 +469,16 @@ label[for="bt_coment"] {
 					            document.getElementById("mail-share-btt").href = mailToLink;
 					        }, false);
 					    </script>
-				    
-				    </div>
-					
-					<!-- Fim da Seção compartilhamento -->
-				
-				<!---Iniciando sessão de comentários--->
-				<div class="comment-section">
-					<div class="grids_of_2">
-						<h2>Comentários</h2>
-					<%		
+
+		</div>
+
+		<!-- Fim da Seção compartilhamento -->
+
+		<!---Iniciando sessão de comentários--->
+		<div class="comment-section">
+			<div class="grids_of_2">
+				<h2>Comentários</h2>
+				<%		
 					try{
 						String nomeUsuario="";	
 						Connection con2 = Conecta.getConnection();
@@ -369,36 +491,45 @@ label[for="bt_coment"] {
 							nomeUsuario=(rs2.getString("nome_usuario"));
 						%>
 
-									<!-- postagem principal -->
-									
-									<div class="grid1_of_2">
-										<div class="grid_img">
-											<a href=""><img src="<%out.print(rs2.getString("img_usuario"));%>" alt=""></a>
-										</div>
-										<div class="grid_text">
-											<h4 class="style1 list"><a href="#"><%=nomeUsuario%></a></h4>
-											<h3 class="style"><%out.print(rs2.getString("data")+" - "+rs2.getString("hora"));%></h3>
-											<p class="para top"><%out.print(rs2.getString("postagem"));%></p>
-											<input type="checkbox" id="bt_coment"> 
-											<label for="bt_coment" class="btn1">Clique para Responder</label>
-											<nav class="coment">
-											
-											<!-- form para comentar na postagem principal -->
-											
-												<form action="envia.jsp" method="post">
-													<input type="text" id="nomePost" name="nomePost" value="<%=nomeUsuario%>" style="display:none">
-													<input type="text" id="nomeJogo1" name="nomeJogo1" value="<%=nomeJogo%>" style="display:none">
-													<label>Nome<span>*</span></label> 
-													<input type="text" value=" " id="userComent" name="userComent"><br /> 
-													<label>Comentario<span>*</span></label>
-													<input type="text" value=" " id="comentario" name="comentario"> 
-													<input type="submit" value="Enviar">
-												</form>
-											</nav>
-										</div>
-										<div class="clear"></div>
-									</div>
-							<%
+				<!-- postagem principal -->
+
+				<div class="grid1_of_2">
+					<div class="grid_img">
+						<a href=""><img
+							src="<%out.print(rs2.getString("img_usuario"));%>" alt=""></a>
+					</div>
+					<div class="grid_text">
+						<h4 class="style1 list">
+							<a href="#"><%=nomeUsuario%></a>
+						</h4>
+						<h3 class="style">
+							<%out.print(rs2.getString("data")+" - "+rs2.getString("hora"));%>
+						</h3>
+						<p class="para top">
+							<%out.print(rs2.getString("postagem"));%>
+						</p>
+						<input type="checkbox" id="bt_coment"> <label
+							for="bt_coment" class="btn1">Clique para Responder</label>
+						<nav class="coment">
+
+							<!-- form para comentar na postagem principal -->
+
+							<form action="envia.jsp" method="post">
+								<input type="text" id="nomePost" name="nomePost"
+									value="<%=nomeUsuario%>" style="display: none"> <input
+									type="text" id="nomeJogo1" name="nomeJogo1"
+									value="<%=nomeJogo%>" style="display: none"> <label>Nome<span>*</span></label>
+								<input type="text" value=" " id="userComent" name="userComent"><br />
+								<label>Comentario<span>*</span></label> <input type="text"
+									value=" " id="comentario" name="comentario"> <input
+									type="submit" value="Enviar">
+							</form>
+						</nav>
+					</div>
+					<div class="clear"></div>
+				</div>
+				}
+				<%
 							String sql3 = "select * from comentario where nome_jogo = ? and usua_post=?";
 							PreparedStatement stmt3 = con2.prepareStatement(sql3);
 							stmt3.setString(1, nomeJogo);
@@ -406,50 +537,60 @@ label[for="bt_coment"] {
 							ResultSet rs3 =stmt3.executeQuery();
 							while(rs3.next()){
 								%>
-								<div class="grid1_of_2 left">
-								<div class="grid_img">
-									<a href=""><img src="<%out.print(rs3.getString("img_usuario"));%>" alt=""></a>
-								</div>
-								<div class="grid_text">
-									<h4 class="style1 list"><a href="#"><%out.print(rs3.getString("nome_usuario"));%></a></h4>
-								<h3 class="style"><%out.print(rs3.getString("data")+" - "+rs3.getString("hora"));%></h3>
-								<p class="para top"><%out.print(rs3.getString("comentario"));%></p>
-							</div>
-							<div class="clear"></div>
-						</div>
-								<%
+				<div class="grid1_of_2 left">
+					<div class="grid_img">
+						<a href=""><img
+							src="<%out.print(rs3.getString("img_usuario"));%>" alt=""></a>
+					</div>
+					<div class="grid_text">
+						<h4 class="style1 list">
+							<a href="#">
+								<%out.print(rs3.getString("nome_usuario"));%>
+							</a>
+						</h4>
+						<h3 class="style">
+							<%out.print(rs3.getString("data")+" - "+rs3.getString("hora"));%>
+						</h3>
+						<p class="para top">
+							<%out.print(rs3.getString("comentario"));%>
+						</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<%
 							}
 							}
 							}catch(Exception e){
 								out.print("deu erro: "+e);
 							}
 							%>
-						<div class="artical-commentbox">
-							<h2>Deixe seu Comentário</h2>
-							<div class="table-form">
-								<form action="post.jsp" method="post" name="post_comment">
-									<div>
-										<label>Nome<span>*</span></label> 
-										<input type="text" value=" " id="userPost" name="userPost">
-										<input type="text" id="nomeJogo1" name="nomeJogo1" value="<%=nomeJogo%>" style="display:none">
-										
-									</div>
-									<div>
-										<label>Seu comentário<span>*</span></label>
-										<textarea id="postagem" name="postagem"> </textarea>
-									</div>
-									<input type="submit" value="Enviar">
-								</form>
-
+				<div class="artical-commentbox">
+					<h2>Deixe seu Comentário</h2>
+					<div class="table-form">
+						<form action="post.jsp" method="post" name="post_comment">
+							<div>
+								<label>Nome<span>*</span></label> <input type="text" value=" "
+									id="userPost" name="userPost"> <input type="text"
+									id="nomeJogo1" name="nomeJogo1" value="<%=nomeJogo%>"
+									style="display: none">
 
 							</div>
-							<div class="clear"></div>
-						</div>
+							<div>
+								<label>Seu comentário<span>*</span></label>
+								<textarea id="postagem" name="postagem"> </textarea>
+							</div>
+							<input type="submit" value="Enviar">
+						</form>
+
+
 					</div>
+					<div class="clear"></div>
 				</div>
-				<!---//Final da sessÃ£o dos comentÃ¡rios--->
 			</div>
 		</div>
+		<!---//Final da sessÃ£o dos comentÃ¡rios--->
+	</div>
+	</div>
 	</div>
 	<!---//End-wrap---->
 </body>
