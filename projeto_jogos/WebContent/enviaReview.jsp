@@ -61,7 +61,7 @@
 							<p>Obrigado pela sua contribuição, com sua ajuda nos tornamos cada vez, uma plataforma melhor! </p>
 						</div>
 						<div class="modal-footer">	
-							<form action="jogos.jsp" method="post">
+							<form action="social.jsp" method="post">
 								<button type="submit" value="<%=nomeJogo%>" name="nomeJogo" id="nomeJogo">ok</button>
 							
 							</form>

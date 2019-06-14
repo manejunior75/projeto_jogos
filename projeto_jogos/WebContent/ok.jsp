@@ -142,8 +142,37 @@
 			out.print("Deu algum erro" +e);
 		}
 	}else{
-		out.print("Insira um jogo valido");
-		%><a href="CadastroDeJogos.jsp">Ok</a><%
+		
+		%>
+		
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<Center><h4 class="modal-title" id="myModalLabel">Atenção!</h4></Center>
+					</div>
+					<div class="modal-body">
+						<p>Este jogo encontra-se cadastrado!</p>
+					</div>
+					<div class="modal-footer">	
+						<a href="CadastroDeJogos.jsp">Ok</a>
+						
+					</div>
+				</div>
+			</div>
+		</div>				
+		<script>
+			$(document).ready(function () {
+				$('#myModal').modal('show');
+			});
+		</script>
+		
+
+		
+		<%
+		
+		
 	}
 %>
 

@@ -223,8 +223,8 @@ label[for="bt_coment"] {
 			<div class="userinfo">
 				<div class="user">
 					<ul>
-						<li><a href="#"><img src="images/joao.jpg"
-								title="Nome-Usuário" /><span>João Valdomiro</span></a></li>
+						<li><a href="#"><img src="images/user.png"
+								title="Nome-Usuário" /><span>Usuário</span></a></li>
 					</ul>
 				</div>
 			</div>
@@ -235,7 +235,7 @@ label[for="bt_coment"] {
 	<!---start-content---->
 
 
-
+	<center><ahref="index.jsp"><img src="images/review.png" title="Review" /></a></center>
 
 
 	<div class="content">
@@ -272,16 +272,18 @@ label[for="bt_coment"] {
 					</center>
 				</div>
 			</div>
+			
+			<!-- Botão da tela de Review -->
+			
+			<center><a href="CLASSE DO REVIEW"><img src="images/review.png" title="Review" /></a></center>
 
-
-
-
+			
 			<!-- Review q romeryto pediu -->
 
 
 
 
-			<form action="review.jsp" method="post">
+			<!-- <form action="review.jsp" method="post">
 				<p>Review Principal</p>
 				<input type="text" id="nomeJogo1" name="nomeJogo1"
 					value="<%=nomeJogo%>" style="display: none"> <label>Nome<span>*</span></label>
@@ -289,7 +291,7 @@ label[for="bt_coment"] {
 				<label>Review<span>*</span></label> <input type="text" value=" "
 					id="review" name="review"> <input type="submit"
 					value="Enviar">
-			</form>
+			</form>-->
 
 			<%		
 					try{	
@@ -306,7 +308,7 @@ label[for="bt_coment"] {
 							data = (rsReview.getString("data"));
 							hora = (rsReview.getString("hora"));
 							%>
-								<div class="grid1_of_2">
+								<!--<div class="grid1_of_2">
 									<div class="grid_img">
 										<a href=""><img src="<%=imgReview%>" alt=""></a>
 									</div>
@@ -319,7 +321,7 @@ label[for="bt_coment"] {
 										</h3>
 										<p class="para top"><%=reviews%></p>
 					
-										<!-- form para comentar na postagem principal -->
+										<!-- form para comentar na postagem principal 
 					
 										<form action="enviaReview.jsp" method="post">
 											<p>Resposta da review</p>
@@ -367,12 +369,12 @@ label[for="bt_coment"] {
 									</p>
 								</div>
 								<div class="clear"></div>
-							</div>
+							</div>-->
 							<%
 						}
 					}catch(Exception e){
 					}
-						%>
+						%> 
 
 
 
@@ -494,10 +496,10 @@ label[for="bt_coment"] {
 				<!-- postagem principal -->
 
 				<div class="grid1_of_2">
-					<div class="grid_img">
+					<!--<div class="grid_img">
 						<a href=""><img
 							src="<%out.print(rs2.getString("img_usuario"));%>" alt=""></a>
-					</div>
+					</div>-->
 					<div class="grid_text">
 						<h4 class="style1 list">
 							<a href="#"><%=nomeUsuario%></a>

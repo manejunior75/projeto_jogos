@@ -43,16 +43,72 @@
 		stmt.close();
 		con.close();
 		
-		out.print("comentario inserido com sucesso!");
+		%>
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<Center><h4 class="modal-title" id="myModalLabel">Comentário Cadastrado com Sucesso!</h4></Center>
+					</div>
+					<div class="modal-body">
+						<p>Seu comentário foi inserido com sucesso, obrigado por sua contribuição!</p>
+					</div>
+					<div class="modal-footer">	
+						<form action="jogos.jsp" method="post">
+							<button type="submit" value="<%=nomeJogo%>" name="nomeJogo" id="nomeJogo">ok</button>
+						
+						</form>
+						
+					</div>
+				</div>
+			</div>
+		</div>				
+		<script>
+			$(document).ready(function () {
+				$('#myModal').modal('show');
+			});
+		</script>
+		<%
 		
 	}catch(Exception e){
-		out.print("deu erro: "+e);
+		%>
+		
+		<!-- Modal -->
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title" id="myModalLabel">Erro ao Salvar Comentário</h4>
+						</div>
+						<div class="modal-body">								
+							<p>Favor entrar em contato com nossa equipe</p>
+						</div>
+					<div class="modal-footer">	
+						<form action="index.jsp" method="post" id="envia">
+							<Center><button type="submit">OK</button></Center>
+						</form>
+						
+					</div>
+				</div>
+			</div>
+		</div>				
+		<script>
+			$(document).ready(function () {
+				$('#myModal').modal('show');
+			});
+		</script>
+		
+		
+		
+		
+		
+		
+		
+		<%
 	}
 %>
-<form action="jogos.jsp" method="post">
-	<button type="submit" value="<%=nomeJogo%>" name="nomeJogo" id="nomeJogo">ok</button>
 
-</form>
 
 </body>
 </html>
