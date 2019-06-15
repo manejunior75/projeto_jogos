@@ -26,8 +26,9 @@
 	SimpleDateFormat horaFormatada= new SimpleDateFormat("HH:mm");
 	String hora = horaFormatada.format(dataAtual);
 
-	String nomeReview = request.getParameter("userReview");
-	String review = request.getParameter("review");
+	String nomeReview = request.getParameter("nomeReview");
+	String userResp = request.getParameter("userResp");
+	String respReview = request.getParameter("respReview");
 	String nomeJogo = request.getParameter("nomeJogo1");
 	String imgUsuario="images/user.png";
 	
@@ -35,14 +36,15 @@
 	try{
 		
 		Connection con = Conecta.getConnection();
-		String sql = "insert into review(nome_usuario, img_usuario, review, nome_jogo, data, hora) values(?,?,?,?,?,?)";
+		String sql = "insert into resp_review(nome_resp, img_resp, resp_review, nome_jogo, data, hora, nome_review) values(?,?,?,?,?,?,?)";
 		PreparedStatement stmt = con.prepareStatement(sql);
-		stmt.setString(1, nomeReview);
+		stmt.setString(1, userResp);
 		stmt.setString(2, imgUsuario);
-		stmt.setString(3, review);
+		stmt.setString(3, respReview);
 		stmt.setString(4, nomeJogo);
 		stmt.setString(5, data);
 		stmt.setString(6, hora);
+		stmt.setString(7, nomeReview);
 		stmt.execute();
 		stmt.close();
 		con.close();

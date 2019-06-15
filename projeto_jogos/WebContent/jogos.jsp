@@ -1,4 +1,4 @@
-man<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1" import="java.sql.*" import="Conexao.Conecta"%>
 
 <!DOCTYPE HTML>
@@ -235,7 +235,7 @@ label[for="bt_coment"] {
 	<!---start-content---->
 
 
-	<center><ahref="index.jsp"><img src="images/review.png" title="Review" /></a></center>
+	<center><a href="index.jsp"><img src="images/review.png" title="Review" /></a></center>
 
 
 	<div class="content">
@@ -275,115 +275,14 @@ label[for="bt_coment"] {
 			
 			<!-- Botão da tela de Review -->
 			
-			<center><a href="CLASSE DO REVIEW"><img src="images/review.png" title="Review" /></a></center>
+			<form action="review.jsp" method="post">
+			<input type="text" value="<%=nome%>" name="nomeJogoReview" id="nomeJogoReview" style="display:none">
+			<input type="text" value="<%=capa%>" name="capaJogo" id="capaJogo" style="display:none">
+			<center><input type="image" src="images/review.png"></center>
+			</form>
+			
 
 			
-			<!-- Review q romeryto pediu -->
-
-
-
-
-			<!-- <form action="review.jsp" method="post">
-				<p>Review Principal</p>
-				<input type="text" id="nomeJogo1" name="nomeJogo1"
-					value="<%=nomeJogo%>" style="display: none"> <label>Nome<span>*</span></label>
-				<input type="text" value=" " id="userReview" name="userReview"><br />
-				<label>Review<span>*</span></label> <input type="text" value=" "
-					id="review" name="review"> <input type="submit"
-					value="Enviar">
-			</form>-->
-
-			<%		
-					try{	
-						Connection conReview = Conecta.getConnection();
-						String review = "select * from review where nome_jogo=?";
-						
-						PreparedStatement stReview = conReview.prepareStatement(review);
-						stReview.setString(1, nomeJogo);
-						ResultSet rsReview = stReview.executeQuery();
-						while(rsReview.next()){
-							nomeReview = (rsReview.getString("nome_usuario"));
-							imgReview = (rsReview.getString("img_usuario"));
-							reviews = (rsReview.getString("review"));
-							data = (rsReview.getString("data"));
-							hora = (rsReview.getString("hora"));
-							%>
-								<!--<div class="grid1_of_2">
-									<div class="grid_img">
-										<a href=""><img src="<%=imgReview%>" alt=""></a>
-									</div>
-									<div class="grid_text">
-										<h4 class="style1 list">
-											<a href="#"><%=nomeReview%></a>
-										</h4>
-										<h3 class="style">
-											<%out.print(data + " - " + hora);%>
-										</h3>
-										<p class="para top"><%=reviews%></p>
-					
-										<!-- form para comentar na postagem principal 
-					
-										<form action="enviaReview.jsp" method="post">
-											<p>Resposta da review</p>
-											<input type="text" id="nomeReview" name="nomeReview"
-												value="<%=nomeReview%>" style="display: none"> <input
-												type="text" id="nomeJogo1" name="nomeJogo1" value="<%=nomeJogo%>"
-												style="display: none"> <label>Nome<span>*</span></label>
-											<input type="text" value=" " id="userResp" name="userResp"><br />
-											<label>Review<span>*</span></label> <input type="text" value=" "
-												id="respReview" name="respReview"> <input type="submit"
-												value="Enviar">
-										</form>
-										</nav>
-									</div>
-									<div class="clear"></div>
-								</div>
-							</div>
-							<br>
-							<%
-						}
-						
-						String respReview = "select * from resp_review where nome_jogo = ? and nome_review=?";
-						PreparedStatement stResp = conReview.prepareStatement(respReview);
-						stResp.setString(1, nomeJogo);
-						stResp.setString(2, nomeReview);
-						ResultSet rsResp =stResp.executeQuery();
-						while(rsResp.next()){
-							%>
-							<div class="grid1_of_2 left">
-								<div class="grid_img">
-									<a href=""><img
-										src="<%out.print(rsResp.getString("img_resp"));%>" alt=""></a>
-								</div>
-								<div class="grid_text">
-									<h4 class="style1 list">
-										<a href="#">
-											<%out.print(rsResp.getString("nome_resp"));%>
-										</a>
-									</h4>
-									<h3 class="style">
-										<%out.print(rsResp.getString("data")+" - "+rsResp.getString("hora"));%>
-									</h3>
-									<p class="para top">
-										<%out.print(rsResp.getString("resp_review"));%>
-									</p>
-								</div>
-								<div class="clear"></div>
-							</div>-->
-							<%
-						}
-					}catch(Exception e){
-					}
-						%> 
-
-
-
-		<!-- Final da review -->
-
-
-
-
-
 		<!-- Fim do trecho das estrelas -->
 
 		<!-- Seção de compartilhamento -->
@@ -496,7 +395,7 @@ label[for="bt_coment"] {
 				<!-- postagem principal -->
 
 				<div class="grid1_of_2">
-					<!--<div class="grid_img">
+					<!--<div class="grid_img">-->
 						<a href=""><img
 							src="<%out.print(rs2.getString("img_usuario"));%>" alt=""></a>
 					</div>-->
@@ -510,10 +409,6 @@ label[for="bt_coment"] {
 						<p class="para top">
 							<%out.print(rs2.getString("postagem"));%>
 						</p>
-						<input type="checkbox" id="bt_coment"> <label
-							for="bt_coment" class="btn1">Clique para Responder</label>
-						<nav class="coment">
-
 							<!-- form para comentar na postagem principal -->
 
 							<form action="envia.jsp" method="post">
@@ -591,7 +486,6 @@ label[for="bt_coment"] {
 			</div>
 		</div>
 		<!---//Final da sessÃ£o dos comentÃ¡rios--->
-	</div>
 	</div>
 	</div>
 	<!---//End-wrap---->
