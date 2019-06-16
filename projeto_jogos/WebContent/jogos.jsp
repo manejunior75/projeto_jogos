@@ -195,7 +195,7 @@ label[for="bt_coment"] {
 								<ul>
 									<li><a href="index.jsp"><span>Destaques</span></a></li>
 									<li><a href="escolhaGenero.jsp"><span>Gêneros</span></a></li>
-									<li><a href="Contribua.html"><span>Contribua</span></a></li>
+									<li><a href="Contribua.jsp"><span>Contribua</span></a></li>
 									<!--<li><a href="sair.html"><span>Sair</span></a></li>-->
 									<div class="clear"></div>
 								</ul>

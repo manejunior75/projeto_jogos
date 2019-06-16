@@ -118,7 +118,7 @@
 										
 										<li><a href="index.jsp"><span>Destaques</span></a></li>
 										<li><a href="escolhaGenero.jsp"><span>Gêneros</span></a></li>
-										<li><a href="Contribua.html"><span>Contribua</span></a></li>
+										<li><a href="Contribua.jsp"><span>Contribua</span></a></li>
 										<li><a href="login.html"><span>Cadastrar Jogos</span></a></li>
 										<!--<li><a href="sair.html"><span>Sair</span></a></li>-->										
 										<div class="clear"> </div>

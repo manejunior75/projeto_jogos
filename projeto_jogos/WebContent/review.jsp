@@ -208,17 +208,20 @@ label[for="bt_coment"] {
 						<h3>
 							<a href="#"><%=nomeJogo%></a>
 						</h3>
-
+						<div class="table-form">
 						<form action="review.jsp" method="post">
 							<p>Review Principal</p>
 							<input type="text" id="nomeJogo1" name="nomeJogo1"
 								value="<%=nomeJogo%>" style="display: none"> <label>Nome<span>*</span></label>
 							<input type="text" value=" " id="userReview" name="userReview"><br />
-							<label>Review<span>*</span></label> <input type="text" value=" "
-								id="review" name="review"> <input type="submit"
-								value="Enviar">
+							<div>
+							<label>Review<span>*</span></label> <textarea type="text" value=" "
+								id="review" name="review"> </textarea>
+							</div>	
+							<input type="submit" value="Enviar">
+								
 						</form>
-
+						</div>
 						<%		
 					try{	
 						Connection conReview = Conecta.getConnection();
@@ -305,10 +308,10 @@ label[for="bt_coment"] {
 			</div>
 		</div>
 	</div>
-			<center><h2 style="color:#fff">Botão para voltar a pagina de jogos</h2></center>
+			<!--<center><h2 style="color:#fff">Botão para voltar a pagina de jogos</h2></center>  -->
 			<form action="jogos.jsp" method="post">
 			<input type="text" value="<%=nomeJogo%>" name="nomeJogo" id="nomeJogo" style="display:none">
-			<center><input type="image" src="images/reply.png">Botão para ir pra pagina de jogos</center>
+			<center><input type="image" src="images/sair.png"></center>
 			</form>
 
 </body>

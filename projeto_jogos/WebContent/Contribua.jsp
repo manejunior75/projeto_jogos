@@ -17,10 +17,12 @@
 	</div>
 
 	<div class="jumbotron">
+		<% String id = "1"; %>
 		<form action="confirma.html" method="post">
 		<div id="aviso"></div>
 			<div class="form-group">
-				<input type="text" id="contribuicao" class="form-control" name="conteudo" placeholder="Cole aqui o link compartilhavel da plataforma de onde seu arquivo está salvo!"><br/>
+				<input type="hidden" id="contribuicao"  name="conteudo" value="<%=id%>"> <br/>
+				<center><input type="file" name="file" id="file" size=100></center>
 			</div>	
 			<center>
 				<button type="submit" class="btn btn-primary">Contribuir</button>
