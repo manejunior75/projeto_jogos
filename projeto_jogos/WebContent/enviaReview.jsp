@@ -29,6 +29,7 @@
 	String nomeReview = request.getParameter("userReview");
 	String review = request.getParameter("review");
 	String nomeJogo = request.getParameter("nomeJogo1");
+	String imgJogo = request.getParameter("capaReview");
 	String imgUsuario="images/user.png";
 	
 		
@@ -59,8 +60,9 @@
 							<p>Obrigado pela sua contribuição, com sua ajuda nos tornamos cada vez, uma plataforma melhor! </p>
 						</div>
 						<div class="modal-footer">	
-							<form action="social.jsp" method="post">
-								<button type="submit" value="<%=nomeJogo%>" name="nomeJogo" id="nomeJogo">ok</button>
+							<form action="review.jsp" method="post">
+								<input type="text" value="<%=imgJogo%>" name="capaJogo" id="capaJogo" style="display:none">
+								<button type="submit" value="<%=nomeJogo%>" name="nomeJogoReview" id="nomeJogoReview">ok</button>
 							
 							</form>
 							

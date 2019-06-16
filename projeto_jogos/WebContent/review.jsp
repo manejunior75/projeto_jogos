@@ -209,14 +209,15 @@ label[for="bt_coment"] {
 							<a href="#"><%=nomeJogo%></a>
 						</h3>
 						<div class="table-form">
-						<form action="review.jsp" method="post">
+						<form action="enviaReview.jsp" method="post">
 							<p>Review Principal</p>
-							<input type="text" id="nomeJogo1" name="nomeJogo1"
-								value="<%=nomeJogo%>" style="display: none"> <label>Nome<span>*</span></label>
+							<input type="text" id="nomeJogo1" name="nomeJogo1" value="<%=nomeJogo%>" style="display: none"> 
+							<input type="text" id="capaReview" name="capaReview" value="<%=imgJogo%>" style="display:none">
+							<label>Nome<span>*</span></label>
 							<input type="text" value=" " id="userReview" name="userReview"><br />
 							<div>
-							<label>Review<span>*</span></label> <textarea type="text" value=" "
-								id="review" name="review"> </textarea>
+							<label>Review<span>*</span></label> 
+							<textarea type="text" value=" " id="review" name="review"> </textarea>
 							</div>	
 							<input type="submit" value="Enviar">
 								
@@ -252,14 +253,16 @@ label[for="bt_coment"] {
 
 								<!-- form para comentar na postagem principal -->
 
-								<form action="enviaReview.jsp" method="post">
+								<form action="enviaResp.jsp" method="post">
 									<p>Resposta da review</p>
-									<input type="text" id="nomeReview" name="nomeReview"
-										value="<%=nomeReview%>" style="display: none"> <input
-										type="text" id="nomeJogo1" name="nomeJogo1"
-										value="<%=nomeJogo%>" style="display: none"> <label>Nome<span>*</span></label>
+									
+									<input type="text" id="nomeReview" name="nomeReview" value="<%=nomeReview%>" style="display: none"> 
+										<input type="text" id="nomeJogo1" name="nomeJogo1" value="<%=nomeJogo%>" style="display: none"> 
+										<input type="text" id="capaReview" name="capaReview" value="<%=imgJogo%>" style="display:none">
+ 										<label style="color:#fff">Nome<span>*</span></label>
+ 										
 									<input type="text" value=" " id="userResp" name="userResp"><br />
-									<label>Review<span>*</span></label> <input type="text"
+									<label style="color:#fff">Review<span>*</span></label> <input type="text"
 										value=" " id="respReview" name="respReview"> <input
 										type="submit" value="Enviar">
 								</form>

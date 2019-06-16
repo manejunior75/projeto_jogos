@@ -415,9 +415,10 @@ label[for="bt_coment"] {
 								<input type="text" id="nomePost" name="nomePost"
 									value="<%=nomeUsuario%>" style="display: none"> <input
 									type="text" id="nomeJogo1" name="nomeJogo1"
-									value="<%=nomeJogo%>" style="display: none"> <label>Nome<span>*</span></label>
+									value="<%=nomeJogo%>" style="display: none"> 
+								<label style="color:#fff">Nome<span>*</span></label>
 								<input type="text" value=" " id="userComent" name="userComent"><br />
-								<label>Comentario<span>*</span></label> <input type="text"
+								<label style="color:#fff">Comentario<span>*</span></label> <input type="text"
 									value=" " id="comentario" name="comentario"> <input
 									type="submit" value="Enviar">
 							</form>
